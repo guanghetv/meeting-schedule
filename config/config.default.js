@@ -1,13 +1,9 @@
 'use strict';
 
-module.exports = appInfo => {
-  const config = exports = {};
+const R = require('ramda')
 
-  // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1510640434261_3611';
+const config = {
+  
+}
 
-  // add your config here
-  config.middleware = [];
-
-  return config;
-};
+module.exports = R.merge(config, process.env.NODE_ENV === 'development' ? require('./config.dev') : require('./config.prod'))
