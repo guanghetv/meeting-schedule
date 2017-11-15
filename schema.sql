@@ -1,8 +1,11 @@
+-- 会议室、面试间、静默室
+CREATE TYPE room_type AS ENUM ('meeting', 'face', 'silence');
+
 create table meeting_room (
     "id" smallserial PRIMARY KEY,
     "description" text,
     "name" text,
-    "type" text
+    "type" room_type not null
 );
 
 create table meeting_schedule (
