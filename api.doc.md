@@ -40,7 +40,7 @@ response body
 
 ## 删除某个会议室的预定状态(stateId为会议预定记录的id)
 
-### DELETE /state/meeting-state/:stateId
+### DELETE /state/meeting-state/room/:roomId/state/:stateId
 
 response 204
 
@@ -60,4 +60,7 @@ request body
     id: string, // 会议预定记录的id (如果是创建，则没有此字段，因为创建成功后才会产生id。)
     userId: string // 用户id，目前为空
 }
+
+response
+created state id or 204
 ```
