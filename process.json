@@ -9,10 +9,11 @@
       "watch": false,
       "merge_logs"  : true,
       "env": {
-        "NODE_PORT": 7003,
+        "NODE_PORT": 7010,
         "NODE_ENV": "production",
         "SEND_RESTART_SMS": true
-      }
+      },
+      "interpreter": "node@8.9.0"
     }
   ]
   
