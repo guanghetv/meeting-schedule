@@ -19,10 +19,7 @@
     "node": ">=8.2.1"
   },
   "scripts": {
-    "dev": "NODE_ENV=development nodemon ./app/app.js",
-    "prod": "NODE_ENV=production nodemon ./app/app.js",
-    "test": "mocha",
-    "preinstall": "rm -rf ./node_modules/wormhole"
+    "dev": "NODE_ENV=development nodemon ./app/app.js"
   },
   "repository": {
     "type": "git",

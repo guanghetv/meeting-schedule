@@ -1,0 +1,19 @@
+[
+    {
+      "name": "meeting",
+      "script": "./app/app.js",
+      "exec_mode" : "cluster",
+      "instances" : 1,
+      "args": "log",
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "watch": false,
+      "merge_logs"  : true,
+      "env": {
+        "NODE_PORT": 7003,
+        "NODE_ENV": "production",
+        "SEND_RESTART_SMS": true
+      }
+    }
+  ]
+  
+  
