@@ -2,11 +2,21 @@
 
 meeting schedule
 
-### Development
+## description
+
+node version >= 7.6.0
+
+### development
 
 ```bash
-$ npm i
-$ npm run dev
+npm i
+npm run dev
+```
+
+### production
+
+```bash
+pm2 start process.json
 ```
 
 ### api
