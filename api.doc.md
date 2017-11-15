@@ -32,7 +32,7 @@ response body
         day: string, // 哪一天的记录
         id: string, // 会议预定记录的id,
         userId: string, // 用户id，目前为空
-        roomId: string
+        roomId: string // 会议室id
     }
 ]
 ```
@@ -59,7 +59,8 @@ request body
     endTime: string, // 预定会议室的结束占用时间
     day: string, // 哪一天的记录
     id: string, // 会议预定记录的id (如果是创建，则没有此字段，因为创建成功后才会产生id。)
-    userId: string // 用户id，目前为空
+    userId: string, // 用户id，目前为空
+    roomId: string // 会议室id
 }
 
 response
