@@ -11,7 +11,7 @@ create table meeting_schedule (
     "userId" varchar(40),
     "description" text,
     "roomId" smallint REFERENCES meeting_room (id) NOT NULL,
-    "day" text not null,
+    "day" timestamptz not null DEFAULT now(),
     "createTime" timestamptz DEFAULT now()
 );
 
