@@ -5,7 +5,17 @@ const pool = require('../../config/db')
 const config = require('../../config/config.default')
 class StateController {
   static async getOneAll(ctx) {
-    const { rows } = await pool.query(`select * from meeting_room`)
+    const { roomId } = ctx.params
+    const { rows } = await pool.query(`
+        select id, description, "timeRange", "roomId", "day" from meeting_schedule where "roomId" = $1
+    `, [ roomId ])
+    rows.map(row => {
+        const showTime = processRangeTimeToObject(row.timeRange)
+        row.beginTime = showTime.beginTime
+        row.endTime = showTime.endTime
+        delete row.timeRange
+        return row
+    })
     ctx.body = rows
   }
   static async deleteOne(ctx) {
@@ -92,6 +102,20 @@ function currentWeekBeginAndNextWeekEnd() {
     const beginTime = moment(moment().add(0 - (today || 7) + 1, 'days').format('YYYY-MM-DD 00:00:00')) // 因为周日的today是0不是7，所以使用(today || 7)
     const endTime = moment(moment().add(7 - (today || 7) + 7).format('YYYY-MM-DD 23:59:59'))
     return { beginTime, endTime }
+}
+
+function processRangeTimeToObject(rangeTimeStr) {
+    const result = {}
+    if (rangeTimeStr) {
+        rangeTimeStr.replace(/\"(.+?)\"/ig, (origin, dest, index) => {
+            if (!result.beginTime) {
+                result.beginTime = dest
+            } else {
+                result.endTime = dest
+            }
+        })
+    }
+    return result
 }
 
 module.exports = StateController;
