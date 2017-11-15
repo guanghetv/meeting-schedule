@@ -8,3 +8,9 @@ meeting schedule
 $ npm i
 $ npm run dev
 ```
+
+### api
+[api-doc](./api.doc.md)
+
+### schema
+[data table](./schema.sql)
