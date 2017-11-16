@@ -8,6 +8,7 @@ class MeetingController {
       select * from meeting_room
     `)
     ctx.body = rows
+    global.socket.emit('meetings', rows)
   }  
 }
 
