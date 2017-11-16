@@ -2,8 +2,8 @@ const { Pool } = require('pg')
 const rooms = require('./meetingRooms')
 
 const pool = new Pool({
-    host: 'localhost',
-    user: 'wanghuan',
+    host: '10.8.8.8',
+    user: 'meeting',
     password: 'lovemeeting?',
     port: 5432,
     max: 10,

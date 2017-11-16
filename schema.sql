@@ -1,6 +1,8 @@
 -- 会议室、面试间、静默室
 CREATE TYPE room_type AS ENUM ('meeting', 'face', 'silence');
 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 create table meeting_room (
     "id" smallserial PRIMARY KEY,
     "description" text,

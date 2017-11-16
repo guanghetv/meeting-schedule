@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
     db: {
-        user: 'postgres',
+        user: 'meeting',
         database: 'meeting',
         host: '10.8.8.8',
         password: 'lovemeeting?',
