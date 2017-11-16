@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://fp.yangcong345.com/jquery.min.2.2.4.js"></script>
+    </head>
+    <body>
+        <script>
+            var domain = 'http://127.0.0.1:7002';
+            var ajax = function(url, type, data) {
+                data = data || {}
+                return $.ajax({
+                    url: url,
+                    type: type,
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    global: true
+                });
+            }
+        </script>
+        <input id="phone" type="手机号">
+        <button id='unbind'>解绑</button>
+        <script>
+            document.getElementById('unbind').addEventListener('click', function() {
+                var phone = document.getElementById('phone').value
+                var url = domain + '/unbind-phone/' + phone
+                ajax(url, 'PUT').success(function() {
+                    alert('解绑成功')
+                    points = []
+                    constructDom()
+                }).fail(function() {
+                    alert('解绑失败')
+                })
+            }) 
+        </script>
+    </body>
+</html>
