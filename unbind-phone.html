@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            var domain = 'http://127.0.0.1:7002';
+            var domain = 'http://10.8.8.8:7010';
             var ajax = function(url, type, data) {
                 data = data || {}
                 return $.ajax({
@@ -25,8 +25,6 @@
                 var url = domain + '/unbind-phone/' + phone
                 ajax(url, 'PUT').success(function() {
                     alert('解绑成功')
-                    points = []
-                    constructDom()
                 }).fail(function() {
                     alert('解绑失败')
                 })
