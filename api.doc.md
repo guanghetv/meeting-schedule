@@ -20,7 +20,7 @@ respone body
 
 ## 获取某个会议室两周的预定状态
 
-### GET /state/meeting-state/:roomId
+### GET /state/meeting-state/room/:roomId
 
 ```javascript
 response body
