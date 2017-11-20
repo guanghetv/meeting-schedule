@@ -47,7 +47,7 @@ class StateController {
     assert(formatDay(beginTime) === formatDay(endTime), 400, '起止时间应该是同一天')
     assert(moment(beginTime).hour() < 19 && moment(beginTime).hour() > 9, 400, '开始时间应该在9:00-19:00间')
     assert(moment(endTime).hour() < 19 && moment(endTime).hour() > 9, 400, '开始时间应该在9:00-19:00间')
-    assert(new Date(day) <= new Date(moment().format('YYYY-MM-DD')), 400, '请不要预定今天之前的会议室')
+    assert(new Date(day) >= new Date(moment().format('YYYY-MM-DD')), 400, '请不要预定今天之前的会议室')
     const canOrderRange = currentWeekBeginAndNextWeekEnd()
     assert(moment(day) > canOrderRange.beginTime, 400, '日期太靠前了，请预定本周和下周')
     assert(moment(day) < canOrderRange.endTime, 400, '日期太靠后了，请预定本周和下周')
@@ -100,7 +100,7 @@ function formatSecond(time) {
 function currentWeekBeginAndNextWeekEnd() {
     const today = moment().day()
     const beginTime = moment(moment().add(0 - (today || 7) + 1, 'days').format('YYYY-MM-DD 00:00:00')) // 因为周日的today是0不是7，所以使用(today || 7)
-    const endTime = moment(moment().add(7 - (today || 7) + 7).format('YYYY-MM-DD 23:59:59'))
+    const endTime = moment(moment().add(7 - (today || 7) + 7, 'days').format('YYYY-MM-DD 23:59:59'))
     return { beginTime, endTime }
 }
 
