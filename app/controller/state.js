@@ -13,6 +13,7 @@ class StateController {
         const showTime = processRangeTimeToObject(row.timeRange)
         row.beginTime = showTime.beginTime
         row.endTime = showTime.endTime
+        row.day = moment(row.day).format('YYYY-MM-DD')
         delete row.timeRange
         return row
     })
