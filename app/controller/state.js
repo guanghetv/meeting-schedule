@@ -52,16 +52,32 @@ class StateController {
     const canOrderRange = currentWeekBeginAndNextWeekEnd()
     assert(moment(day) > canOrderRange.beginTime, 400, '日期太靠前了，请预定本周和下周')
     assert(moment(day) < canOrderRange.endTime, 400, '日期太靠后了，请预定本周和下周')
-    let result = await pool.query(`
-        select * from meeting_schedule
-        where day = $1 and "timeRange" @> $2::timestamptz
-    `, [ day, beginTime ])
+    let result = null
+    if (id) {
+        result = await pool.query(`
+            select * from meeting_schedule
+            where day = $1 and "timeRange" @> $2::timestamptz and id != $3
+        `, [ day, beginTime, id ])
+    } else {
+        result = await pool.query(`
+            select * from meeting_schedule
+            where day = $1 and "timeRange" @> $2::timestamptz
+        `, [ day, beginTime ])
+    }
     assert(result.rows.length === 0, 400, '开始时间设置的有冲突')
-    result = await pool.query(`
-        select * from meeting_schedule
-        where day = $1 and "timeRange" @> $2::timestamptz
-    `, [ day, endTime ])
-    assert(result.rows.length === 0, 400, '结束时间设置的有冲突')
+    // if (id) {
+    //     result = await pool.query(`
+    //         select * from meeting_schedule
+    //         where day = $1 and "timeRange" @> $2::timestamptz and id != $3
+    //     `, [ day, endTime, id ])
+    // } else {
+    //     result = await pool.query(`
+    //     select * from meeting_schedule
+    //     where day = $1 and "timeRange" @> $2::timestamptz
+    // `, [ day, endTime ])
+    // }
+    // console.log(result.rows)
+    // assert(result.rows.length === 0, 400, '结束时间设置的有冲突')
     const timeRange = createTimeRange(beginTime, endTime)
     if (id) {
         await pool.query(`
