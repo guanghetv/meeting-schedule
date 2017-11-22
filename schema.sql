@@ -26,7 +26,7 @@ create or replace function check_time_cover() returns trigger as $time_cover_che
     begin
         count := (
             select count(*) from meeting_schedule
-            where "timeRange" && NEW."timeRange"::tstzrange and "roomId" = NEW."roomId"
+            where "timeRange" && NEW."timeRange"::tstzrange and "roomId" = NEW."roomId" and id != NEW."id"
         );
         if (count > 0) then
             raise exception 'time cover other';
