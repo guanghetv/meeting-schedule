@@ -56,13 +56,13 @@ class StateController {
     if (id) {
         result = await pool.query(`
             select * from meeting_schedule
-            where day = $1 and "timeRange" @> $2::timestamptz and id != $3
-        `, [ day, beginTime, id ])
+            where day = $1 and "roomId" = $2 and "timeRange" @> $3::timestamptz and id != $4
+        `, [ day, roomId, beginTime, id ])
     } else {
         result = await pool.query(`
             select * from meeting_schedule
-            where day = $1 and "timeRange" @> $2::timestamptz
-        `, [ day, beginTime ])
+            where day = $1 and "roomId" = $2 and "timeRange" @> $3::timestamptz
+        `, [ day, roomId, beginTime ])
     }
     assert(result.rows.length === 0, 400, '开始时间设置的有冲突')
     // if (id) {
