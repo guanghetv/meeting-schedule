@@ -32,6 +32,15 @@ class StateController {
             and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
+    rows.map(row => {
+        const showTime = processRangeTimeToObject(row.timeRange)
+        row.beginTime = showTime.beginTime
+        row.endTime = showTime.endTime
+        row.day = moment(row.day).format('YYYY-MM-DD')
+        row.roomId = roomId
+        delete row.timeRange
+        return row
+    })
     global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
   }
   static async updateOne(ctx) {
@@ -100,6 +109,15 @@ class StateController {
             and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
+    rows.map(row => {
+        const showTime = processRangeTimeToObject(row.timeRange)
+        row.beginTime = showTime.beginTime
+        row.endTime = showTime.endTime
+        row.day = moment(row.day).format('YYYY-MM-DD')
+        row.roomId = roomId
+        delete row.timeRange
+        return row
+    })
     global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
   }
 }
