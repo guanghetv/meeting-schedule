@@ -28,11 +28,11 @@ class StateController {
     const canOrderRange = currentWeekBeginAndNextWeekEnd()
     const { rows } = await pool.query(`
         select * from meeting_schedule
-            where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-            and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            where day >= '${canOrderRange.beginTime.format('YYYY-MM-DD 00:00')}'
+            and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
-    global.io.broadcast('roomStates', { rommId: roomId, states: rows })
+    global.socket && global.socket.emit('roomStates', { rommId: roomId, states: rows })
   }
   static async updateOne(ctx) {
     let { beginTime, endTime, description, day, id, userId = 'xxx', roomId } = ctx.request.body
@@ -96,11 +96,11 @@ class StateController {
     }
     const { rows } = await pool.query(`
         select * from meeting_schedule
-            where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-            and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            where day >= '${canOrderRange.beginTime.format('YYYY-MM-DD 00:00')}'
+            and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
-    global.io.broadcast('roomStates', { rommId: roomId, states: rows })
+    global.socket && global.socket.broadcast('roomStates', { rommId: roomId, states: rows })
   }
 }
 

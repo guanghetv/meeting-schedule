@@ -21,9 +21,10 @@ const io = new socket(server)
 
 io.on('connection', function(socket){
     console.log('a user connected')
+    if (!global.socket) {
+        global.socket = socket
+    }
 })
-
-global.io = io
 
 
 console.log(`listen at ${process.env.NODE_PORT || 7002}`)
