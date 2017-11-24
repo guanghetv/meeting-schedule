@@ -100,7 +100,7 @@ class StateController {
             and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
-    global.socket && global.socket.broadcast('roomStates', { rommId: roomId, states: rows })
+    global.socket && global.socket.emit('roomStates', { rommId: roomId, states: rows })
   }
 }
 
