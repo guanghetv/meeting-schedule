@@ -26,5 +26,7 @@ io.on('connection', function(socket){
     }
 })
 
+global.io = io
+
 
 console.log(`listen at ${process.env.NODE_PORT || 7002}`)

@@ -32,7 +32,7 @@ class StateController {
             and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
-    global.socket && global.socket.emit('roomStates', { rommId: roomId, states: rows })
+    global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
   }
   static async updateOne(ctx) {
     let { beginTime, endTime, description, day, id, userId = 'xxx', roomId } = ctx.request.body
@@ -100,7 +100,7 @@ class StateController {
             and day <= '${canOrderRange.endTime.format('YYYY-MM-DD 23:59')}'
             and "roomId" = $1
     `, [ roomId ])
-    global.socket && global.socket.emit('roomStates', { rommId: roomId, states: rows })
+    global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
   }
 }
 
