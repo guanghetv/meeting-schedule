@@ -26,12 +26,13 @@ class StateController {
     `, [ stateId ])
     ctx.status = 204
     const canOrderRange = currentWeekBeginAndNextWeekEnd()
-    // const { rows } = await pool.query(`
-    //     select * from meeting_schedule
-    //         where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-    //         and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-    //         and "roomId" = $1
-    // `, [ roomId ])
+    const { rows } = await pool.query(`
+        select * from meeting_schedule
+            where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            and "roomId" = $1
+    `, [ roomId ])
+    global.io.broadcast('roomStates', { rommId: roomId, states: rows })
   }
   static async updateOne(ctx) {
     let { beginTime, endTime, description, day, id, userId = 'xxx', roomId } = ctx.request.body
@@ -93,12 +94,13 @@ class StateController {
         `, [ timeRange, moment(day).format('YYYY-MM-DD 00:00:00'), userId, description, roomId ])
         ctx.body = rows[0].id
     }
-    // const { rows } = await pool.query(`
-    //     select * from meeting_schedule
-    //         where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-    //         and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
-    //         and "roomId" = $1
-    // `, [ roomId ])
+    const { rows } = await pool.query(`
+        select * from meeting_schedule
+            where day >= ${canOrderRange.beginTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            and day <= ${canOrderRange.endTime.format('YYYY-DD-MM: 00:00:00')}::timestamptz
+            and "roomId" = $1
+    `, [ roomId ])
+    global.io.broadcast('roomStates', { rommId: roomId, states: rows })
   }
 }
 
