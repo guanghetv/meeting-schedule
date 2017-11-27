@@ -29,17 +29,20 @@ async function updateRoom(room) {
         update meeting_room set
             name = $1,
             description = $2,
-            type = $3
-        where id = $4
-    `, [ room.name, room.description, room.type, room.id ])
+            type = $3,
+            devices = $4,
+            place = $5,
+            "peopleCount" = $6
+        where id = $7
+    `, [ room.name, room.description, room.type, room.devices, room.place, room.peopleCount, room.id ])
     console.log('update one')
 }
 
 async function createRoom(room) {
     await pool.query(`
-        insert into meeting_room (name, description, type) values
-        ($1, $2, $3)
-    `, [ room.name, room.description, room.type ])
+        insert into meeting_room (name, description, type, devices, place, "peopleCount") values
+        ($1, $2, $3, $4, $5, $6)
+    `, [ room.name, room.description, room.type, room.devices, room.place, room.propleCount ])
     console.log('insert one')
 }
 

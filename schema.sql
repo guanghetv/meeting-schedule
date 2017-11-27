@@ -7,7 +7,10 @@ create table meeting_room (
     "id" smallserial PRIMARY KEY,
     "description" text,
     "name" text,
-    "type" room_type not null
+    "type" room_type not null,
+    "devices" text default '',
+    "location" text default '',
+    "peoplesCount" smallint default 0
 );
 
 create table meeting_schedule (
@@ -43,3 +46,6 @@ create trigger check_time_update before update on meeting_schedule
     for each row EXECUTE PROCEDURE check_time_cover();
 
 -- insert into meeting_schedule ("timeRange", "userId", "description", "roomId", "day") values ('[2017-09-27 00:00:00+08,2017-10-13 00:00:00+08]', 'xxx', '描述', 1, '2017-10-10');
+alter table meeting_room add column devices text default '';
+alter table meeting_room add column place text default '';
+alter table meeting_room add column "peoplesCount" smallint default 0;

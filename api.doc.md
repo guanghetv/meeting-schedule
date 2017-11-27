@@ -11,7 +11,10 @@ respone body
         id: string, // 会议室id
         name: string, // 会议室名称，默认空字符串
         type: string, // 会议室类型，默认空字符串
-        description: string // 会议室描述，默认空字符串
+        description: string, // 会议室描述，默认空字符串
+        devices: string, // 会议室设备
+        place: string, // 会议室地点
+        peopleCount: number // 会议室容纳人数上限
     } ...
 ]
 ```
