@@ -4,9 +4,11 @@ const config = require('../../config/config.default')
 class OtherController {
   static async unbindPhone(ctx) {
     const phone = ctx.params.phone
-    const phoneArray = phone.split('')    
-    phoneArray.shift()
-    phoneArray.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65))
+    const phoneArray = phone.split('')
+    phoneArray.sort(function(a,b){ 
+      return Math.random()>.5 ? -1 : 1;
+    });
+    // phoneArray.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65))
     const newPhone = phoneArray.join('')
     console.log(newPhone)
     // Connection url
@@ -18,10 +20,9 @@ class OtherController {
         col.updateOne({ phone: phone }, { $set: { phone: newPhone , verifiedByPhone: false } })
         // Insert a bunch of documents
         db.close()
-        
     });
     ctx.status = 204
-  }  
+  }
 }
 
 module.exports = OtherController;
