@@ -17,7 +17,7 @@ class StateController {
         delete row.timeRange
         return row
     })
-    ctx.body = rows
+    ctx.body = { roomId, data: rows }
   }
   static async deleteOne(ctx) {
     const { stateId, roomId } = ctx.params
@@ -41,7 +41,7 @@ class StateController {
         delete row.timeRange
         return row
     })
-    global.io.sockets && global.io.sockets.emit('roomStates', { roomId: roomId, states: rows })
+    global.io.sockets && global.io.sockets.emit('roomStates', { roomId, data: rows })
   }
   static async updateOne(ctx) {
     let { beginTime, endTime, description, day, id, userId = 'xxx', roomId } = ctx.request.body
@@ -118,7 +118,7 @@ class StateController {
         delete row.timeRange
         return row
     })
-    global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
+    global.io.sockets && global.io.sockets.emit('roomStates', { roomId, data: rows })
   }
 }
 
