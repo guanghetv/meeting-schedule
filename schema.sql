@@ -1,5 +1,5 @@
 -- 会议室、面试间、静默室
-CREATE TYPE room_type AS ENUM ('meeting', 'face', 'silence');
+CREATE TYPE room_type AS ENUM ('meeting', 'face', 'silence', 'voice');
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 

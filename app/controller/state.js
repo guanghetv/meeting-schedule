@@ -41,7 +41,7 @@ class StateController {
         delete row.timeRange
         return row
     })
-    global.io.sockets && global.io.sockets.emit('roomStates', { rommId: roomId, states: rows })
+    global.io.sockets && global.io.sockets.emit('roomStates', { roomId: roomId, states: rows })
   }
   static async updateOne(ctx) {
     let { beginTime, endTime, description, day, id, userId = 'xxx', roomId } = ctx.request.body
