@@ -61,7 +61,7 @@ class StateController {
     assert(new Date(day) >= new Date(moment().format('YYYY-MM-DD')), 400, '请不要预定今天之前的会议室')
     const canOrderRange = currentWeekBeginAndNextWeekEnd()
     // assert(moment(day) > canOrderRange.beginTime, 400, '日期太靠前了，请预定本周和下周')
-    // assert(moment(day) < canOrderRange.endTime, 400, '日期太靠后了，请预定本周和下周')
+    assert(moment(day) < canOrderRange.endTime, 400, '日期太靠后了，请预定本周和下周')
     let result = null
     if (id) {
         result = await pool.query(`
