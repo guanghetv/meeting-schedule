@@ -1,45 +1,45 @@
 module.exports = [
     {
         id: 1,
-        name: "拉格朗日点(一层)",
+        name: "拉格朗日点(一层)面试优先",
         description: "可用作会议室，面试优先",
-        type: "face",
+        type: "meeting",
         devices: '',
         place: '一层',
         peopleCount: 4
     },
     {
         id: 2,
-        name: "B612(一层)",
+        name: "B612(一层)面试优先",
         description: "可用作会议室，面试优先",
-        type: "face",
+        type: "meeting",
         devices: '',
         place: '一层',
         peopleCount: 4
     },
     {
         id: 3,
-        name: "旅行者号(一层)",
+        name: "旅行者号(一层)面试优先",
         description: "可用作会议室，面试优先",
-        type: "face",
+        type: "meeting",
         devices: '',
         place: '一层',
         peopleCount: 4
     },
     {
         id: 4,
-        name: "引力波(二层)",
+        name: "引力波(二层)面试优先",
         description: "可用作会议室，面试优先",
-        type: "face",
+        type: "meeting",
         devices: '',
         place: '二层',
         peopleCount: 4
     },
     {
         id: 5,
-        name: "黑洞(二层)",
+        name: "黑洞(二层)面试优先",
         description: "可用作会议室，面试优先",
-        type: "face",
+        type: "meeting",
         devices: '',
         place: '二层',
         peopleCount: 4
