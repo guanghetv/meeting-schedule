@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_drop_down_down_Dark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_drop_down_down_Dark">
+            <rect id="Rectangle-path" x="0" y="0" width="20" height="20"></rect>
+            <path d="M10.5791667,12.5 L13.2291667,9.27083333 C13.4125708,9.04673001 13.4505721,8.73706267 13.3267962,8.47526332 C13.2030203,8.21346397 12.9395844,8.04631282 12.65,8.04583333 L7.35,8.04583333 C7.06041557,8.04631282 6.79697972,8.21346397 6.67320383,8.47526332 C6.54942795,8.73706267 6.58742921,9.04673001 6.77083333,9.27083333 L9.42083333,12.5 C9.56329938,12.6731565 9.77576851,12.7734856 10,12.7734856 C10.2242315,12.7734856 10.4367006,12.6731565 10.5791667,12.5 L10.5791667,12.5 Z" id="Shape" fill="#3B3B3B" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>
