@@ -1,0 +1,14 @@
+
+.ant-modal-content{
+    width:300px;
+}
+.ant-modal-content .ant-modal-body p{
+    margin:5px 0;
+}
+.ant-modal-content .ant-modal-body p input {
+    background-color: rgb(242,242,242);
+    color:rgb(182,182,182);
+}
+.ant-modal-content .ant-modal-body .ant-form-item {
+    margin-bottom: 10px
+}
