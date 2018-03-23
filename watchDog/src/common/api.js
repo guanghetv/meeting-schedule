@@ -1,9 +1,8 @@
 const domain = 'http://10.8.8.8:7010';
-// const domain = 'http://127.0.0.1:7002';
 
 const APIs = {
     GET_ROOMS: '/meeting/all-meeting-room',
-    GET_ROOM_ORDERS: '/state/meeting-state/room/',
+    GET_ROOM_ORDERS: '/state/meeting-state/room/', //  /state/meeting-state/room/:id
     DELETE_ROOM_STATUS: '/state/meeting-state/room/',
     PUT_ROOM_STATUS: '/state/meeting-state'
 };

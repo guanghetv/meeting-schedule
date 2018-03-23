@@ -12,7 +12,7 @@ module.exports = {
     },
     dev: {
         //  端口号
-        port: 8016,
+        port: 8006,
         //  是否自动打开浏览器
         autoOpenBrowser: true,
         assetsSubDirectory: 'assets',

@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta http-equiv="Access-Control-Allow-Origin" content="*">
-<head>
-    <meta charset="UTF-8">
-    <title>会议室预定</title>
+<!Doctype html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <title>洋葱会议预定系统</title>
     <style>
         html,body,#app{
             width: 100%;
             height: 100%;
         }
-        div[data-reactroot] {
+        #root {
             height: 100%;
         }
         .ant-layout{
             height: 100%;
         }
     </style>
-</head>
+</header>
 <body>
     <script src="https://fp.yangcong345.com/socket.io.js"></script>
     <script>
         window.socket = io('http://10.8.8.8:7010')
     </script>
-    <div id="app"></div>
+    <div id="root"></div>
 </body>
 </html>

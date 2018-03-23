@@ -15,7 +15,7 @@ module.exports = {
     },
     output: {
         path: config.build.assetsRoot,
-        filename: '[name].[hash].js',
+        filename: '[name].[hash].bundle.js',
         publicPath: process.env.NODE_ENV === 'production'
             ? config.build.assetsPublicPath
             : config.dev.assetsPublicPath
@@ -83,11 +83,15 @@ module.exports = {
                         }
                     }, 'postcss-loader', 'sass-loader']
                 })
+            },
+            {
+                test: /\.bundle\.js$/,
+                use: 'bundle-loader'
             }
         ]
     },
     resolve: {
-        extensions: ['.js', '.json'],
+        extensions: ['.js', '.jsx', '.css', '.json'],
         modules: [
             resolve('src'),
             resolve('node_modules')

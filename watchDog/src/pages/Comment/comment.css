@@ -1,0 +1,122 @@
+.btnDate {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+}
+.btnDate p:nth-of-type(1) {
+    flex: 4;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.btnDate p:nth-of-type(2){
+    flex: 1;
+}
+.btnDate p:nth-of-type(2) .ant-btn {
+    margin: 0 8px;
+}
+
+.ant-layout-content {
+    height: 100%;
+    overflow: scroll
+}
+.Chart{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.CtContent{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f6f7;
+}
+.calendar{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: auto;
+    flex: 1;
+}
+.content{
+    display: flex
+}
+.timeBlock{
+    flex: 1;
+    flex-direction: row-reverse;
+}
+.clock{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    color: #bebebe;
+    font-size: 14px;
+    border-bottom:1px solid #f3f3f3;
+    border-right: 1px solid #f3f3f3;
+    padding-top: 10px;
+}
+.weekday{
+    flex: 1;
+    flex-direction: row-reverse;
+}
+.weekdayHeader{
+    border-bottom: 3px solid #f3f3f3;
+    text-align: center;
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+}
+.weekdayHeader span {
+    flex: 1
+}
+.timeSingleBlock{
+    display: flex;
+    border-right: 1px solid #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #f3f3f3;
+}
+.create{
+    font-size:12px;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.makeMeet{
+    display: block;
+    width: 97%;
+    color: #fff;
+    text-align: center;
+}
+.makeMeet:hover {
+    color: rgb(165,165,165);
+}
+.makeMeet img{
+    display: inline-block;
+    padding-right:2px;
+}
+.active {
+    width: 97%;
+    color: #fff;
+    background-color: rgb(86,158,231);
+    padding-top: 0;
+    text-align: center;
+    margin: 0 auto
+}
+.active .description {
+    width: 125px;
+    display: block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

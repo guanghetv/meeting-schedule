@@ -11,3 +11,4 @@ run/
 *.swp
 .vscode/
 logs/
+dist/
