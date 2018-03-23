@@ -1,1 +1,0 @@
-webpackJsonp([1],{1190:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(0),a=n.n(r),c={textAlign:"center",padding:50},i=function(){return a.a.createElement("div",{style:c},"404")};t.default=i}});
