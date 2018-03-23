@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>iconArrowRight</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iconArrowRight">
+            <polygon id="Fill-1" points="0 18 18 18 18 0 0 0"></polygon>
+            <g id="Group-6" transform="translate(6.000000, 4.125000)" fill="#888888">
+                <path d="M5.7352125,5.16285 L5.0380875,5.859975 C4.8790875,6.018975 4.6210875,6.018975 4.4620875,5.859975 L0.2647125,1.6626 C0.1057125,1.5036 0.1057125,1.245975 0.2647125,1.086975 L0.9618375,0.38985 C1.1208375,0.23085 1.3788375,0.23085 1.5378375,0.38985 L5.7352125,4.587225 C5.8942125,4.746225 5.8942125,5.00385 5.7352125,5.16285" id="Fill-2"></path>
+                <path d="M5.037975,3.8900625 L5.7351,4.5871875 C5.8941,4.7461875 5.8941,5.0038125 5.7351,5.1628125 L1.537725,9.3598125 C1.378725,9.5191875 1.1211,9.5191875 0.9621,9.3598125 L0.2646,8.6630625 C0.105975,8.5040625 0.105975,8.2464375 0.2646,8.0874375 L4.46235,3.8900625 C4.62135,3.7310625 4.878975,3.7310625 5.037975,3.8900625" id="Fill-4"></path>
+            </g>
+        </g>
+    </g>
+</svg>

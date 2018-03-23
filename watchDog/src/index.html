@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<header>
+    <meta charset="utf-8" />
+    <title>洋葱会议预定系统</title>
+    <style>
+        html,body,#app{
+            width: 100%;
+            height: 100%;
+        }
+        #root {
+            height: 100%;
+        }
+        .ant-layout{
+            height: 100%;
+        }
+    </style>
+</header>
+<body>
+    <script src="https://fp.yangcong345.com/socket.io.js"></script>
+    <script>
+        window.socket = io('http://10.8.8.8:7010')
+    </script>
+    <div id="root"></div>
+</body>
+</html>

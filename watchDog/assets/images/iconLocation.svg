@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>iconLocation</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iconLocation">
+            <polygon id="Fill-1" points="0 20 20 20 20 0 0 0"></polygon>
+            <g id="Group-6" transform="translate(2.916667, 2.083333)" fill="#A2A2A2">
+                <path d="M7.08354167,0.237833333 C10.9377083,0.237833333 14.0627083,3.402 14.0627083,7.30491667 C14.0627083,11.7728333 9.584375,14.5099167 7.80229167,15.4224167 C7.35145833,15.65325 6.815625,15.65325 6.364375,15.4224167 C4.58270833,14.5099167 0.104375,11.7728333 0.104375,7.30491667 C0.104375,3.402 3.22895833,0.237833333 7.08354167,0.237833333 Z M9.87833333,7.312625 C9.87833333,5.768875 8.62708333,4.517625 7.08333333,4.517625 C5.53958333,4.517625 4.28833333,5.768875 4.28833333,7.312625 C4.28833333,8.856375 5.53958333,10.107625 7.08333333,10.107625 C8.62708333,10.107625 9.87833333,8.856375 9.87833333,7.312625 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
