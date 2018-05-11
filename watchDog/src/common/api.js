@@ -1,4 +1,4 @@
-const domain = 'http://10.8.8.8:7010';
+const domain = 'https://meeting.guanghe.tv:7011';
 
 const APIs = {
     GET_ROOMS: '/meeting/all-meeting-room',

@@ -52,6 +52,7 @@ class LayoutaPage extends React.Component {
                         <Select.Option value="meeting">会议室</Select.Option>
                         <Select.Option value="face">面试室</Select.Option>
                         <Select.Option value="voice">录音室</Select.Option>
+                        <Select.Option value="live">直播间</Select.Option>
                     </Select>
                     <Menu mode="inline" onClick={this.Click}>
                         {
