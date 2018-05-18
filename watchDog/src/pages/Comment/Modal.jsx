@@ -36,8 +36,12 @@ class Dmodal extends React.Component {
         }
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                if(values.description === '') {
-                    message.warning('使用者和描述不能为空~')
+                if(values.name === '') {
+                    message.warning('使用人不能为空～')
+                    return false;
+                }
+                if(values.desc === '') {
+                    message.warning('描述不能为空~')
                     return false;
                 }
                 if(new Date(moment(values.endTime)).getTime() < new Date(moment(values.beginTime)).getTime()) {
@@ -49,8 +53,11 @@ class Dmodal extends React.Component {
                     return false;  
                 }
             }
-            let data = _.assign(body,values)
-            console.log(data)
+            let data = _.assign(body,{
+                beginTime: values.beginTime,
+                endTime: values.endTime,
+                description: `${values.name}-${values.desc}`
+            })
             this.props.modalStore.putData(data).then(res => {
                 message.success('创建成功')
                 this.props.modalStore.setVisibleModal(false)
@@ -146,10 +153,17 @@ class Dmodal extends React.Component {
                         </Col>
                     </FormItem>
                     <FormItem>
-                        {getFieldDecorator('description',{
-                            initialValue: isModalData.description ? isModalData.description : ''
+                        {getFieldDecorator('name',{
+                            initialValue: isModalData.description ? isModalData.description.split('-')[0] : ''
                         })(
-                            <TextArea style={{resize:'none'}} rows={2} placeholder="请添写使用者和主题" />
+                            <TextArea style={{resize:'none'}} rows={2} placeholder="请添写使用者" />
+                        )}
+                    </FormItem>
+                    <FormItem>
+                        {getFieldDecorator('desc',{
+                            initialValue: isModalData.description ? isModalData.description.split('-')[1] : ''
+                        })(
+                            <TextArea style={{resize:'none'}} rows={2} placeholder="请添写使用主题" />
                         )}
                     </FormItem>
                     <FormItem span={12}>
